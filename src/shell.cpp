@@ -33,7 +33,8 @@ void shell(SDL_Window *window, SDL_Renderer *renderer) {
             SDL_RenderClear(renderer);
 
             // Place text box
-            // mainBox.placeOnScreen();
+            mainBox.placeOnScreen();
+            mainBox.handleEverything();
 
 
             SDL_RenderPresent(renderer);

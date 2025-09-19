@@ -17,7 +17,7 @@ private:
 
     // Other
     std::string baseText;
-    std::string text;
+    std::string text = " ";
     bool active = false;
 
 public:
