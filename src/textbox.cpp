@@ -28,7 +28,7 @@ void TextBox::placeOnScreen() {
     SDL_SetRenderDrawColor(renderer, 30, 30, 30, 255);
     SDL_RenderFillRect(renderer, &box);
 
-    // Load font (ideally do this once in constructor, not here!)
+    // Load font 
     TTF_Font* arial = openFont("ARIAL.TTF", 20);
     if (!arial) {
         std::cerr << "Font Error: " << TTF_GetError() << std::endl;
