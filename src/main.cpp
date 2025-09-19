@@ -40,15 +40,15 @@ int main() {
     }
 
     // Pass to the shell
-    // shell(window, renderer);
+    shell(window, renderer);
 
-    std::string action = "print Hello, World!";
-    Parser parser;
-    Lexer lexer;
-    lexer.setTokens(parser.tokenize(action));
-    ActionType actionType = lexer.executeTokens();
-    std::string output = lexer.ExecuteCommand(actionType);
-    std::cout << output << std::endl;
+    // std::string action = "print Hello, World!";
+    // Parser parser;
+    // Lexer lexer;
+    // lexer.setTokens(parser.tokenize(action));
+    // ActionType actionType = lexer.executeTokens();
+    // std::string output = lexer.ExecuteCommand(actionType);
+    // std::cout << output << std::endl;
 
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);

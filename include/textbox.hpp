@@ -13,6 +13,7 @@ private:
     SDL_Rect box;
     SDL_Window* window;
     SDL_Renderer* renderer;
+    SDL_Event e;
 
     // Other
     std::string baseText;
@@ -20,7 +21,7 @@ private:
     bool active = false;
 
 public:
-    TextBox(SDL_Window* w, SDL_Renderer* r, SDL_Rect b, std::string text);
+    TextBox(SDL_Window* w, SDL_Renderer* r, SDL_Rect b, std::string text, SDL_Event e);
     ~TextBox();
 
     void placeOnScreen();

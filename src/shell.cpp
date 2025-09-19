@@ -3,26 +3,14 @@
 //
 #include "../include/pch.hpp"
 #include "../include/shell.hpp"
-
 #include <memory>
-
 #include "../include/fontUtils.hpp"
 #include "../include/Parser_Lexer.hpp"
+#include "../include/textbox.hpp"
 #include <SDL2/SDL_ttf.h>
 
 int WINH = 600;
 int WINW = 800;
-
-bool isInside(SDL_Rect box) {
-    int x, y;
-    SDL_GetMouseState(&x, &y);
-
-    return (x >= box.x &&
-            x <= box.x + box.w &&
-            y >= box.y &&
-            y <= box.y + box.h
-            );
-}
 
 void shell(SDL_Window *window, SDL_Renderer *renderer) {
     // Create parser and lexer
@@ -33,7 +21,7 @@ void shell(SDL_Window *window, SDL_Renderer *renderer) {
     SDL_Event e;
     bool running = true;
 
-
+    TextBox mainBox(window, renderer, {0, 0, WINW, WINH}, "Hello, World!", e);
     while (running) {
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) {
@@ -43,6 +31,10 @@ void shell(SDL_Window *window, SDL_Renderer *renderer) {
             // Clear screen
             SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
             SDL_RenderClear(renderer);
+
+            // Place text box
+            // mainBox.placeOnScreen();
+
 
             SDL_RenderPresent(renderer);
             SDL_Delay(16);
